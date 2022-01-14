@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+  <h1 class="d5 mx-3 my-5">Find a food place near you!</h1>
+  <form method="GET" action="/searchresults" class="mx-3">
+    <div class="mb-3">
+      <label for="locationField" class="form-label">Enter your location:</label>
+      <input type="text" class="form-control" id="locationField" name="location" placeholder="Enter your location">
+      <button class="btn btn-primary my-3" type="submit">Submit</button>
+    </div>
+  </form>
+  </body>
+  <%-include('partials/footer')%>

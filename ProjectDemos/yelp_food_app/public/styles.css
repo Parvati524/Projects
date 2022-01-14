@@ -1,0 +1,33 @@
+html{
+    position:relative;
+    min-height: 100%;
+}
+html, body{
+    /* height:100%; */
+    width:100%;
+    padding:0;
+    border:0;
+   
+}
+body{
+      /* Margin bottom by footer height */
+  margin-bottom: 200px;
+}
+a{
+    text-decoration: none;
+}
+.businessStyle{
+background-color: #add8e6;
+font-size:24px;
+}
+.searchAgain{
+    font-size:20px;
+    font-style:bold;
+}
+footer{
+    position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}

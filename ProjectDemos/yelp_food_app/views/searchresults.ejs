@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+    <div class="container">
+        <div class="row my-3">
+            <h1 class="strong">Here are some great places nearby:</h1>
+        </div>
+        <%for(let i=0; i<10; i++){%>
+            <div class="row align-items-center my-3 businessStyle">
+                <div class="col-auto">
+                    <a class="px-4" href="<%=business[i].url%>">
+                        <%=business[i].name%>
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <img class="stars" src="assets/regular_<%=business[i].rating%>@2x.png">
+                </div>
+            </div>
+            <%}%>
+                <div class="row">
+                    <a class="strong searchAgain" href="/home">Search Again?</a>
+                </div>
+    </div>
+    </body>
+    <%- include('partials/footer') %>

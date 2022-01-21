@@ -3,7 +3,6 @@ const app = express();
 const yelp = require('yelp-fusion');
 const keys = require("./config/keys");
 const fetch = require('node-fetch')
-
 const yelpApiKey = keys.yelpApiKey;
 const youtubeApiKey = keys.youtubeApiKey;
 const client = yelp.client(yelpApiKey);
@@ -28,7 +27,6 @@ app.get('/result', (req, res) => {
 
     let yelp = client.search(searchRequest).then(response => {
         let businesses = response.jsonBody.businesses
-       
         return (businesses)
     }).catch(e => {
         console.log(e)
@@ -42,7 +40,6 @@ app.get('/result', (req, res) => {
         const data = await response.json();
         const videos = data;
         console.log(videos)
-    
         return videos
     }
 
@@ -51,7 +48,6 @@ app.get('/result', (req, res) => {
         Promise.all([yelp, youtube()])
             .then(values =>
                 Promise.all(values.map(value => JSON.stringify(value))))
-            //doesn't JSON.stringify make the json readable like text but with the quotes?
             .then(finalVals => {
                 let businesses = finalVals[0];
                 let videos = finalVals[1];

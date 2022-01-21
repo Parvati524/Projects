@@ -28,9 +28,7 @@ app.get('/result', (req, res) => {
 
     let yelp = client.search(searchRequest).then(response => {
         let businesses = response.jsonBody.businesses
-        // for (let i = 0; i < businesses.length; i++) {
-        //     console.log(businesses[i].name, businesses[i].display_phone)
-        // }
+       
         return (businesses)
     }).catch(e => {
         console.log(e)
@@ -44,11 +42,7 @@ app.get('/result', (req, res) => {
         const data = await response.json();
         const videos = data;
         console.log(videos)
-        // console.log(`from youtube function: ${videos}${typeof(videos)}`)
-        //why does it say it is an object when it is JSON? also, why am I able to do this javascript to extract the values on json?
-        // let videoId=[];
-        // for(let i =0; i<videos.length; i++){
-        // videoId.push(videos[i].id["videoId"])}
+    
         return videos
     }
 

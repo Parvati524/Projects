@@ -3,7 +3,6 @@ const needle = require('needle');
 const app = express();
 app.use(express.static('public'));
 
-
 app.get('/', (req, res) => {
     let price = ""
     needle.get('https://api.coindesk.com/v1/bpi/currentprice.json', (error, response, body) => {
@@ -27,10 +26,9 @@ app.get('/', (req, res) => {
             console.log(queryParam)
             res.render('index.ejs', { USD: USD, GBP: GBP, EUR: EUR, queryParam: queryParam, usSign: usSign, gbpSign: gbpSign, eurSign: eurSign })
         }
-
     });
-
 });
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Port is running on ${port}`);

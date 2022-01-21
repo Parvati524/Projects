@@ -5,7 +5,6 @@ app.use(express.static('public'))
 const yelp = require('yelp-fusion');
 const client = yelp.client('ERVEM9NrMrOGxZYKci2QFbVmTILjHdUjtzhKwovXPJMxo6d0dYSBCpvlN8GggeqhAtFcSiRLVqqOQWh_OBXlHHIWxWusGfLPeeyNjdqZxO7SRyXSTva2gc8qJqSCYXYx');
 
-
 app.get('/', (req, res) => {
   res.redirect('/home');
 });
@@ -22,15 +21,11 @@ app.get('/searchresults', (req, res) => {
     categories: "Food",
     limit: 10
   }).then(response => {
-
     let business = response.jsonBody.businesses;
     res.render('searchresults.ejs', { business })
-
   }).catch(e => {
     console.log(e);
-
   });
-
 })
 
 app.get('*', (req, res) => {
